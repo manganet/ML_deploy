@@ -159,18 +159,33 @@ input[type='file'] {
   position: relative;
 }
 
-@media screen and (max-width: 812px) {
+@media screen and (max-width: 375px) {
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
   html {
     font-size: 20px;
   }
+
+  main {
+    width: auto;
+  }
+
   .container {
     width: 80%;
     height: 80%;
   }
 
+  .row {
+    margin: auto;
+  }
+
   #maintext {
+    width: auto;
     font-size: 19px;
-    margin: 0 20px auto 20px;
+    margin: auto;
   }
 
   input[type='file'] {
