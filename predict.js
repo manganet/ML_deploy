@@ -11,9 +11,7 @@ $('#image-selector').change(function() {
 
 let model;
 (async function() {
-  model = await tf.loadLayersModel(
-    'https://manganet.github.io/ML_deploy/tfjs-model/MobileNet/model.json'
-  );
+  model = await tf.loadLayersModel('./tfjs-model/MobileNet/model.json');
   $('.progress-bar').hide();
 })();
 
