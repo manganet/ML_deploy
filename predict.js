@@ -12,7 +12,7 @@ $('#image-selector').change(function() {
 let model;
 (async function() {
   model = await tf.loadLayersModel('./tfjs-model/MobileNet/model.json');
-  $('.progress-bar').hide();
+  $('.spinner-wrapper').hide();
 })();
 
 $('#predict-button').click(async function() {
@@ -27,6 +27,8 @@ $('#predict-button').click(async function() {
     .expandDims();
 
   let predictions = await model.predict(tensor).data();
+  $('.spinner-wrapper').hide();
+
   let top5 = Array.from(predictions)
     .map(function(p, i) {
       return {
